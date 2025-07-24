@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/infoFragment">
+
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.test.InfoFragment"
+        android:label="Test Bilgisi"
+        tools:layout="@layout/fragment_info">
+        <action
+            android:id="@+id/action_infoFragment_to_ledTestFragment"
+            app:destination="@id/ledTestFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ledTestFragment"
+        android:name="com.example.test.LedTestFragment"
+        android:label="LED Testi"
+        tools:layout="@layout/fragment_led_test">
+        <action
+            android:id="@+id/action_ledTestFragment_to_wingTestFragment"
+            app:destination="@id/wingTestFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/wingTestFragment"
+        android:name="com.example.test.WingTestFragment"
+        android:label="Kanat Testi"
+        tools:layout="@layout/fragment_wing_test">
+        <action
+            android:id="@+id/action_wingTestFragment_to_roofTestFragment"
+            app:destination="@id/roofTestFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/roofTestFragment"
+        android:name="com.example.test.RoofTestFragment"
+        android:label="Çatı Testi"
+        tools:layout="@layout/fragment_roof_test">
+        <action
+            android:id="@+id/action_roofTestFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.example.test.SummaryFragment"
+        android:label="Test Özeti"
+        tools:layout="@layout/fragment_summary">
+        <action
+            android:id="@+id/action_summaryFragment_to_infoFragment"
+            app:destination="@id/infoFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation> 
